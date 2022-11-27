@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>测试文件的上传和下载</title>
+</head>
+<body>
+    <a th:href="@{/testDownload}">下载1.jpg</a><br/>
+    <!--
+        上传文件的步骤：
+            1. 引入依赖
+            2. 在SpringMVC配置文件中配置文件上传解析器
+            3. 控制器方法
+    -->
+    <form th:action="@{/testUpload}" method="post" enctype="multipart/form-data">
+<!--        enctype="multipart/form-data"以二进制的方式上传-->
+        头像：<input type="file" name="photo"><br/>
+        <input type="submit" value="上传">
+    </form>
+</body>
+</html>
